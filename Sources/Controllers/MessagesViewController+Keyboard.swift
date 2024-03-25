@@ -31,10 +31,7 @@ extension MessagesViewController {
   // MARK: - Register Observers
 
   internal func addKeyboardObservers() {
-    keyboardManager.bind(
-      inputAccessoryView: inputContainerView, 
-      withAdditionalBottomSpace: { [weak self] in self?.inputBarAdditionalBottomSpace() ?? 0 }
-    )
+    keyboardManager.bind(inputAccessoryView: inputContainerView)
     keyboardManager.bind(to: messagesCollectionView)
 
     /// Observe didBeginEditing to scroll content to last item if necessary
